@@ -18,6 +18,11 @@ _global_script_class_icons={
 config/name="Crackout"
 config/icon="res://icon.png"
 
+[mono]
+
+debugger_agent/wait_for_debugger=true
+debugger_agent/wait_timeout=10000
+
 [rendering]
 
 environment/default_environment="res://default_env.tres"
