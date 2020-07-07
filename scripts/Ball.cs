@@ -3,6 +3,7 @@ using System;
 
 public class Ball : KinematicBody2D
 {
+    private int screenHeight = (int)ProjectSettings.GetSetting("display/window/size/height");
     /// <summary> Internal variable for continuing movement </summary>
     private Vector2 velocity = new Vector2();
 
@@ -22,6 +23,11 @@ public class Ball : KinematicBody2D
             
             // Bounce ball, will keep moving if not executed
             velocity = velocity.Bounce(collisionInfo.Normal);
+        }
+        // Ball is under screen. Sprite should be added to the calculation in the future.
+        if (Position.y > screenHeight)
+        {
+            QueueFree();
         }
     }
 }
