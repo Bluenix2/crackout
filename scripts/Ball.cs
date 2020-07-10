@@ -3,6 +3,7 @@ using System;
 
 public class Ball : KinematicBody2D
 {
+    /// <summary> Internal variable for calculating when the ball is under the screen. </summary>
     private int screenHeight = (int)ProjectSettings.GetSetting("display/window/size/height");
     /// <summary> Internal variable for continuing movement </summary>
     private Vector2 velocity = new Vector2();
@@ -16,9 +17,9 @@ public class Ball : KinematicBody2D
         var collisionInfo = MoveAndCollide(velocity * delta);
         if (collisionInfo != null)
         {
-            if (collisionInfo.Collider is Brick brick)
+            if (collisionInfo.Collider is IBrick brick)
             {
-                brick.Hit();
+                brick.Hit(this);
             }
             
             // Bounce ball, will keep moving if not executed
