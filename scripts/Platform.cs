@@ -22,6 +22,6 @@ public class Platform : KinematicBody2D
     }
     public override void _PhysicsProcess(float delta)
     {
-        velocity = MoveAndSlide(velocity);
+        MoveAndCollide(velocity*delta);
     }
 }
