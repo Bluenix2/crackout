@@ -6,7 +6,7 @@ public class Ball : KinematicBody2D
     /// <summary> Internal variable for calculating when the ball is under the screen. </summary>
     private int screenHeight = (int)ProjectSettings.GetSetting("display/window/size/height");
     /// <summary> Internal variable for continuing movement </summary>
-    private Vector2 velocity = new Vector2();
+    public Vector2 Velocity = new Vector2();
 
     /// <summary> The chosen speed at which the ball should move </summary>
     [Export]
@@ -14,7 +14,7 @@ public class Ball : KinematicBody2D
 
     public override void _PhysicsProcess(float delta)
     {
-        var collisionInfo = MoveAndCollide(velocity * delta);
+        var collisionInfo = MoveAndCollide(Velocity * delta);
         if (collisionInfo != null)
         {
             if (collisionInfo.Collider is IBrick brick)
