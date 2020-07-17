@@ -25,6 +25,7 @@ public class Game : Node2D
     }
     public override void _Ready()
     {
-        // Will load and instance bricks, and apply initial velocity on ball to start bounce.
+        var ball = GetNode("Ball") as Ball;
+        ball.Velocity = new Vector2(-250, -250);
     }
 }
