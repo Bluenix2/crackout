@@ -23,12 +23,7 @@ public class Ball : KinematicBody2D
             }
             
             // Bounce ball, will keep moving if not executed
-            velocity = velocity.Bounce(collisionInfo.Normal);
-        }
-        // Ball is under screen. Sprite should be added to the calculation in the future.
-        if (Position.y > screenHeight)
-        {
-            QueueFree();
+            Velocity = Velocity.Bounce(collisionInfo.Normal);
         }
     }
 }
