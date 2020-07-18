@@ -1,6 +1,9 @@
 name: Deployment
 
-on: push
+on:
+  push:
+    branches-ignore:
+      - gh-pages
 
 jobs:
   export_game:
@@ -16,6 +19,8 @@ jobs:
         godot_export_templates_download_url: https://downloads.tuxfamily.org/godotengine/3.2.2/mono/Godot_v3.2.2-stable_mono_export_templates.tpz
         relative_project_path: ./
         create_release: false
+    - name: Debug
+      run: ls
     - name: Deploy
       uses: JamesIves/github-pages-deploy-action@releases/v3
       with:
