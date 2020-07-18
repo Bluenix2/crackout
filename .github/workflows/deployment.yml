@@ -10,7 +10,7 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
     - name: Export
-      uses: firebelley/godot-export@v2
+      uses: firebelley/godot-export@v2.2.0
       with:
         godot_executable_download_url: https://downloads.tuxfamily.org/godotengine/3.2.2/mono/Godot_v3.2.2-stable_mono_linux_headless_64.zip
         godot_export_templates_download_url: https://downloads.tuxfamily.org/godotengine/3.2.2/mono/Godot_v3.2.2stable_mono_export_templates.tpz
