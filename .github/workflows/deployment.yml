@@ -25,5 +25,5 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         BRANCH: gh-pages
         FOLDER: ../../../.local/share/godot/builds/HTML5/
-        TARGET_FOLDER: ${{ github.ref }}/game/
+        TARGET_FOLDER: ${GITHUB_REF##*/}/game/
         CLEAN: true
