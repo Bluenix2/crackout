@@ -1,0 +1,32 @@
+name: Deployment
+
+on:
+  push:
+    branches-ignore:
+      - gh-pages
+
+jobs:
+  export_game:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+    - name: Export
+      uses: firebelley/godot-export@v2.2.0
+      with:
+        godot_executable_download_url: https://downloads.tuxfamily.org/godotengine/3.2.2/mono/Godot_v3.2.2-stable_mono_linux_headless_64.zip
+        godot_export_templates_download_url: https://downloads.tuxfamily.org/godotengine/3.2.2/mono/Godot_v3.2.2-stable_mono_export_templates.tpz
+        relative_project_path: ./
+        create_release: false
+    - name: Branch name
+      id: branch_name
+      run: echo "::set-output name=branch::${GITHUB_REF#refs/heads/}"
+    - name: Deploy
+      uses: JamesIves/github-pages-deploy-action@releases/v3
+      with:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        BRANCH: gh-pages
+        FOLDER: ../../../.local/share/godot/builds/HTML5/
+        TARGET_FOLDER: ${{ steps.branch_name.outputs.branch }}/game/
+        CLEAN: true
