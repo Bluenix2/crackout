@@ -17,10 +17,10 @@ jobs:
         relative_project_path: ./
         create_release: false
     - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@releases/v3
-        with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          BRANCH: gh-pages
-          FOLDER: http/
-          TARGET_FOLDER: master/game/
-          CLEAN: true
+      uses: JamesIves/github-pages-deploy-action@releases/v3
+      with:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        BRANCH: gh-pages
+        FOLDER: http/
+        TARGET_FOLDER: master/game/
+        CLEAN: true
