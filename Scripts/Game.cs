@@ -3,10 +3,15 @@ using System;
 
 public class Game : Node2D
 {
+    [Export]
+    public NodePath platformPath;
+    /// <summary>
+    /// The platform controlled by the the player. Gets assigned at runtime when entering NodeTree from <see cref="platformPath"/> export
+    /// </summary>
+    private Platform platform;
     public override void _Process(float delta)
     {
         // Platform movement
-        var platform = GetNode("Platform") as Platform;
         if (platform != null)
         {
             if (Input.IsActionPressed("ui_right"))
@@ -25,6 +30,9 @@ public class Game : Node2D
     }
     public override void _Ready()
     {
+        // Assign platform from platformPath export
+        platform = GetNode(platformPath) as Platform;
+
         var ball = GetNode("Ball") as Ball;
         ball.Velocity = new Vector2(-250, -250);
     }

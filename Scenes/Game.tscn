@@ -9,6 +9,7 @@
 
 [node name="Game" type="Node2D"]
 script = ExtResource( 4 )
+platformPath = NodePath("Platform")
 
 [node name="HUD" parent="." instance=ExtResource( 3 )]
 
