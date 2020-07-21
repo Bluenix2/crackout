@@ -7,6 +7,7 @@
 [node name="Walls" type="StaticBody2D" parent="."]
 
 [node name="CollisionPolygon" type="CollisionPolygon2D" parent="Walls"]
+build_mode = 1
 polygon = PoolVector2Array( 0, 0, 1920, 0, 1920, 1080, 2112, 1080, 2112, -108, -192, -108, -192, 1080, 0, 1080 )
 
 [node name="KillWall" type="Area2D" parent="."]
