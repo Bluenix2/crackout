@@ -8,9 +8,9 @@ public class Platform : KinematicBody2D
     /// <summary> The X direction at which we should move the next physics-frame </summary>
     public int Direction = 0;
 
-    /// <summary> The chosen speed at which the ball should move </summary>
+    /// <summary> The chosen speed at which the platform should move </summary>
     [Export]
-    public int Speed;
+    private int speed;
 
     // Process gets called every frame, this is also when input gets updated.
     // PhysicsProcess gets called at every physics frame, which is by default set to 60
@@ -18,7 +18,7 @@ public class Platform : KinematicBody2D
     //     Because they are unsynchronised.
     public override void _Process(float delta)
     {
-        velocity.x = Speed * Direction;
+        velocity.x = speed * Direction;
     }
     public override void _PhysicsProcess(float delta)
     {

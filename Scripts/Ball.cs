@@ -10,7 +10,7 @@ public class Ball : KinematicBody2D
 
     /// <summary> The chosen speed at which the ball should move </summary>
     [Export]
-    public int Speed;
+    private int speed;
 
     public override void _PhysicsProcess(float delta)
     {

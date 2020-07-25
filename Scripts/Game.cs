@@ -4,7 +4,7 @@ using System;
 public class Game : Node2D
 {
     [Export]
-    public NodePath platformPath;
+    private NodePath platformPath;
     /// <summary>
     /// The platform controlled by the the player. Gets assigned at runtime when entering NodeTree from <see cref="platformPath"/> export
     /// </summary>
