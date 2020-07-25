@@ -18,7 +18,7 @@ position = Vector2( 960, 840 )
 
 [node name="Platform" parent="." instance=ExtResource( 2 )]
 position = Vector2( 960, 900 )
-Speed = 500
+speed = 500
 
 [node name="Level1" parent="." instance=ExtResource( 5 )]
 
