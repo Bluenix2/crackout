@@ -28,6 +28,6 @@ jobs:
       with:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         BRANCH: gh-pages
-        FOLDER: HTML5/
-        TARGET_FOLDER: ${{ steps.branch_name.outputs.branch }}/game/
+        FOLDER: .
+        TARGET_FOLDER: ${{ steps.branch_name.outputs.branch }}
         CLEAN: true
