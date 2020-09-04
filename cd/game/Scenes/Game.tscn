@@ -1,0 +1,25 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Scenes/Ball.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Platform.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Hud.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scripts/Game.cs" type="Script" id=4]
+[ext_resource path="res://Scenes/Levels/Level1.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Borders.tscn" type="PackedScene" id=6]
+
+[node name="Game" type="Node2D"]
+script = ExtResource( 4 )
+platformPath = NodePath("Platform")
+
+[node name="HUD" parent="." instance=ExtResource( 3 )]
+
+[node name="Ball" parent="." instance=ExtResource( 1 )]
+position = Vector2( 960, 840 )
+
+[node name="Platform" parent="." instance=ExtResource( 2 )]
+position = Vector2( 960, 900 )
+speed = 500
+
+[node name="Level1" parent="." instance=ExtResource( 5 )]
+
+[node name="Borders" parent="." instance=ExtResource( 6 )]

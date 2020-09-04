@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scenes/HealthBrick.tscn" type="PackedScene" id=1]
+
+[node name="FiveBrick" instance=ExtResource( 1 )]
+Health = 5
